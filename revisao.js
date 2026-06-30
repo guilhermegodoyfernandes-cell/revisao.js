@@ -52,6 +52,20 @@ app.delete("/musicas/:id", (req, res) => {
         res.status(500).json({erro: error.message})
     }
 })
+
+app.get("musicas/estilo/:estilo",(req, res) => {
+    const estilo = req.params.estilo
+    try{
+        const bd = JSON.parse(fs.readFileSync('bd.json','utf8'))
+        const musicas = bd.filter((musica) => musica.estilo == estilo)
+        if(musicas.length == 0){
+            return res.status(404).json({erro: "Estilo de música não encontrado!"})
+        }
+        res.status(200).json({resposta: musicas})
+    } catch(error){
+        res.status(500).json({resposta: error.message})
+    }
+})
 app.listen(port, ()=>{
     console.log("API rodando na porta" + port)
 })
