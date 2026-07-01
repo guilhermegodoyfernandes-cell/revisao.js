@@ -1,10 +1,6 @@
+Resumo das chamadas no RapidAPI Client
 
-/*Resumo das chamadas no RapidAPI Client
-Método
-URL
-Função
-
-GET
+//GET
   http://localhost:3000/musicas/id
   Lista todas as músicas
 
@@ -22,7 +18,7 @@ DELETE
 
 GET
   http://localhost:3000/musicas/estilo/Rock
-  Lista músicas do estilo informado*/
+  Lista músicas do estilo informado
 [
     {
       "id": 1,
