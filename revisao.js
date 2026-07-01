@@ -25,11 +25,11 @@ app.get("/musicas", (req, res) => {
         res.status(500).json({resposta: error.message})
     }
 })
-app.post("/musico", (req, res) => {
+app.post("/musicas", (req, res) => {
     const musica = req.body
     try{
         const bd = JSON.parse(fs.readFileSync('bd.json', 'utf8'))
-        bd.push(muisca)
+        bd.push(musica)
         fs.writeFileSync('bd.json', JSON.stringify(bd))
         res.status(201).json({resposta: "Musica cadastrada com sucesso!!"})
     } catch(error) {
@@ -40,7 +40,7 @@ app.post("/musico", (req, res) => {
 app.delete("/musicas/:id", (req, res) => {
     const id = req.params.id 
     try{
-        const bd = JSON.parse(fs.readFileSync('bd.json', 'utf'))
+        const bd = JSON.parse(fs.readFileSync('bd.json', 'utf8'))
         const indiceMusica = bd.findIndex((musica) => musica.id == id)
         if(indiceMusica == -1) {
             return res.status(404).json({erro: "Erro ao excluir, música não existe"})
@@ -53,7 +53,7 @@ app.delete("/musicas/:id", (req, res) => {
     }
 })
 
-app.get("musicas/estilo/:estilo",(req, res) => {
+app.get("/musicas/estilo/:estilo",(req, res) => {
     const estilo = req.params.estilo
     try{
         const bd = JSON.parse(fs.readFileSync('bd.json','utf8'))
