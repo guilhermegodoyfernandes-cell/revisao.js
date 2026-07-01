@@ -1,3 +1,28 @@
+
+/*Resumo das chamadas no RapidAPI Client
+Método
+URL
+Função
+
+GET
+  http://localhost:3000/musicas/id
+  Lista todas as músicas
+
+GET
+  http://localhost:3000/musicas/1
+  Busca uma música pelo ID
+
+POST
+  http://localhost:3000/musicas
+  Cadastra uma música (enviando JSON no Body)
+
+DELETE
+  http://localhost:3000/musicas/2
+  Remove a música com ID 2
+
+GET
+  http://localhost:3000/musicas/estilo/Rock
+  Lista músicas do estilo informado*/
 [
     {
       "id": 1,
