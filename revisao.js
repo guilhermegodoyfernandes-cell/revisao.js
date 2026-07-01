@@ -4,7 +4,7 @@ const port = 3000
 app.use(express.json())
 const fs = require('fs')
 
-app.get("/musicas/id ", (req, res) => {
+app.get("/musicas/:id ", (req, res) => {
     try{
         const bd = JSON.parse(fs.readFileSync('bd.json','utf8'))
         res.status(200).json({resposta: bd})
